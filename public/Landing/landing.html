@@ -1,5 +1,5 @@
    <div class="fullscreen-bg">
-        <video autoplay="" class="fullscreen-bg__video" loop="">
+        <video poster="../Media/LandingBackground.webmhd.webm" autoplay="" class="fullscreen-bg__video" loop="">
         <!--<source src="../Media/BlackSandsVik30R.webmhd.webm">-->
          <source src="../Media/LandingBackground.webmhd.webm"></video>
     </div>
@@ -11,10 +11,9 @@
                 Together</h5>
             </div><!--button to route to search page-->
             <div class="row center">
-                <!-- <a class="btn-large waves-effect waves-light green"
-                        href="" id="download-button">Get Started</a> -->
-                <button class="waves-effect waves-light btn modal-trigger"
-                data-target="#signUpModal" data-toggle="modal">Get Started</button>
+                <!-- <a class="btn-large waves-effect waves-light green modal-trigger"
+                        href="#signUpModal" id="download-button">Get Started</a> -->
+                <button class="waves-effect waves-light btn" ng-click="getStarted()">Get Started</button>
                 <!-- <div class="modal" id="modal1">
                     <div class="modal-content">
                         <h4>Create New Account</h4>
@@ -25,8 +24,8 @@
                         data-target="#modal1" data-toggle="modal" href="#!">Agree</a>
                     </div>
                 </div> -->
-                <div class="modal fade bs-example-modal-lg" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal fade bs-example-modal-lg" id="signUpModal">
+              <!-- <div class="modal-dialog modal-lg" role="document"> -->
                   <div class="modal-content signUpContent">
                       <form class="userInfo">
                           <h2>Create New Account</h2>
@@ -38,13 +37,13 @@
                                   <input class="infoFields form-control" type="text" name="firstName" placeholder="Enter first name" />
                               </li>
                               <li>
-                                  <input class="infoFields form-control"type="text" name="lastName" placeholder="Enter last name" />
+                                  <input class="infoFields form-control" type="text" name="lastName" placeholder="Enter last name" />
                               </li>
                           </ul>
-                          <input type="submit" value="Submit" class="btn btn-success" >
+                          <input type="submit" value="Submit" class="btn btn-success" data-target="signUpModal" data-toggle="modal" >
                          </form>
                   </div>
-              </div>
+              <!-- </div> -->
           </div>
 
             </div>
@@ -137,7 +136,7 @@
             </div>
         </div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
-    </script> 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-    </script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script> --> 
+<!--     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    </script> -->

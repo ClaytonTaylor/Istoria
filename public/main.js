@@ -1,9 +1,9 @@
 angular.module('callTimeApp', ['ui.router'])
     .config(Config)
-    .controller('modalOpen', [
-            '$scope',
-            modalOpenFunc
-        ]);
+    // .controller('modalOpen', [
+    //         '$scope',
+    //         // modalOpenFunc
+    //     ]);
 
 
 //******Router Setup*******
@@ -15,17 +15,18 @@ angular.module('callTimeApp', ['ui.router'])
             .state('Login', {
                 url: '/Login',
                 templateUrl: './Login/login.html'
-            //     data: {
-            //     css: '.Login/materialize.min.css'
-            // }
                 // controller: 'loginController as logCtrl'
                 // authenticate: false
             })
 
             .state('Landing', {
                 url: '/Landing',
-                templateUrl: './Landing/landing.html'
-                // controller: '',
+                templateUrl: './Landing/landing.html',
+                controller: function($scope){ // manually adding a function to the controller
+                    $scope.getStarted = function() {
+                        $('#signUpModal').openModal();
+                    }
+                },
                 // authenticate: true
             })
             .state('MusicLanding', {
@@ -41,8 +42,4 @@ angular.module('callTimeApp', ['ui.router'])
                 // authenticate: true
             });
             $urlRouterProvider.otherwise('/Landing');
-    }
-
-    function modalOpenFunc($scope) {
-        $('#modal1').openModal();
     }
