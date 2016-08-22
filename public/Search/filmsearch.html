@@ -1,0 +1,133 @@
+<!--===============================Forms on Search.html========================-->
+<!--<div class="container" style="width: 500px; height: 500px; margin-left: 100px; margin-top: 25px; padding-bottom: 30px;">-->
+
+<!--if background color is not grey than try removing hyfen-->
+<div class="container background-grey" style="margin-top: 5%">
+    <div class='row'>
+        <div class="col s6">
+              <h4>Please Fill Out Your Information</h4>
+              
+              <!--Name Form-->
+              <div class="row;">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6; background white black-text" style="line-height: 45px; width: 50%; height: 42px; font-size: 1rem; margin-left:0px; margin-bottom:30px; border-radius: 5px">
+                      <input ng-model='Name' placeholder="Name" id="first_name" type="text" class="validate" style="padding:0px;">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              
+              <!--Select Profession-->
+                <select ng-model='Position' class="browser-default background white black-text" style="width: 50%; display:flex">
+                    <option value="" disabled selected>Crew Position</option>
+                    <option value="Art Director">Art Director</option>
+                    <option value="Best Boy Lighting">Best Boy Lighting</option>
+                    <option value="Boom Operator">Boom Operator</option>
+                    <option value="Camera Operator">Camera Operator</option>
+                    <option value="Carpenter">Carpenter</option>
+                    <option value="Casting Director">Casting Director</option>
+                    <option value="Cinematographer (Director of Photography)">Cinematographer (Director of Photography)</option>
+                    <option value="Composer">Composer</option>
+                    <option value="Construction Coordinator">Construction Coordinator</option>
+                    <option value="Costume Designer">Costume Designer</option>
+                    <option value="Costume Supervisor">Costume Supervisor</option>
+                    <option value="Costumer">Costumer</option>
+                    <option value="Director">Director</option>
+                    <option value="Dolly Grip">Dolly Grip</option>
+                    <option value="Film Editor">Film Editor</option>
+                    <option value="First Assistant Camera (1st A.C.)">First Assistant Camera (1st A.C.)</option>
+                    <option value="First Assistant Director (1st A.D.)">First Assistant Director (1st A.D.)</option>
+                    <option value="Gaffer">Gaffer</option>
+                    <option value="Grip">Grip</option>
+                    <option value="Hair Stylist">Hair Stylist</option>
+                    <option value="Head Carpenter">Head Carpenter</option>
+                    <option value="Illustrator">Illustrator</option>
+                    <option value="Key Grip">Key Grip</option>
+                    <option value="Key Makeup Artis">Key Makeup Artist</option>
+                    <option value="Lead Man">Lead Man</option>
+                    <option value="Lighting Technician">Lighting Technician</option>
+                    <option value="Makeup Artist">Makeup Artist</option>
+                    <option value="Music Supervisor">Music Supervisor</option>
+                    <option value="Production Designer">Production Designer</option>
+                    <option value="Second Assistant Camera (2nd A.C.)">Second Assistant Camera (2nd A.C.)</option>
+                    <option value="Second Assistant Director (2nd A.D.)">Second Assistant Director (2nd A.D.)</option>
+                    <option value="Set Decorator">Set Decorator</option>
+                    <option value="Set Designer">Set Designer</option>
+                    <option value="Set Dresser">Set Dresser</option>
+                    <option value="Sound Designer">Sound Designer</option>
+                    <option value="Sound Editor">Sound Editor</option>
+                    <option value="Sound Mixer">Sound Mixer</option>
+                    <option value="Special Effects Supervisor">Special Effects Supervisor</option>
+                    <option value="Stunt Coordinator">Stunt Coordinator</option>
+                    <option value="Stuntman">Stuntman</option>
+                    <option value="Visual Effects Producer">Visual Effects Producer</option>
+                </select>
+                <br>
+            
+                  <!--Gender Form-->
+                <select ng-model='Gender' class="browser-default background white black-text" style="width: 50%; display:flex">
+                    <option value="" disabled selected>Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            
+            
+                  <!--Location Form-->
+                <label>Location</label>
+                  <select ng-model='Location' class="browser-default background white black-text" style="width: 50%; display:flex">
+                    <option value="" disabled selected>Location</option>
+                    <option value="Oklahoma">Oklahoma</option>
+                    <option value="Texas">Texas</option>
+                    <option value="California">California</option>
+                    <option value="Washington">Washington</option>
+                    <option value="Colorado">Colorado</option>
+                    <option value="Kansas">Kansas</option></option>
+                    <!--<option value="2">Other State</option>-->
+                  </select>
+            
+                  <!--Expertise Form-->
+                <label>Expertise Level</label>
+                  <select ng-model='Experience' class="browser-default background white black-text" style="width: 50%; display:flex">
+                    <option value="" disabled selected>Level of Expertise</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Amatuer">Amatuer</option>
+                  </select>
+              <br>
+              
+                  <!--Equipment Form-->
+                <div class="row browser-default background white black-text;" style="width:65%; display: flex; margin-left:0px; border-radius: 5px">
+                    <form class="col s12">
+                        <div class="input-field col s12; black-text">
+                          <textarea  ng-model='Equipment' style="padding-top: 30px; padding-bottom:0px" id="textarea1" class="materialize-textarea"></textarea>
+                          <label style="padding-left:10px" class="black-text" for="textarea1">Personal Equipment</label>
+                        </div>
+                    </form>
+                </div>
+              
+              <!--Generate Button-->
+              <div class="row left">
+                    <!--<a class="btn-large waves-effect waves-light green" style="margin-left: 10px">Generate</a>-->
+                    <button ng-click="searchCtrl.test()" class="btn-large waves-effect waves-light green" style="margin-left: 10px;">Generate</button>
+              </div>
+        </div>
+        <div class="col s6">
+            <ul class="collapsible" data-collapsible="expandable">
+                  <li ng-repeat="Person in searchCtrl.NewCrew">
+                   <div class="collapsible-header"><i class="material-icons">assignment_ind</i>{{Person.Position}}</div>
+                    <div class="collapsible-body white">
+                        <ul style="padding: 2%">
+                          <li>Name: {{Person.Name}}</li>
+                          <li>Gender: {{Person.Gender}}</li>
+                          <li>Location: {{Person.Location}}</li>
+                          <li>Experience: {{Person.Experience}}</li>
+                          <li>Equipment: {{Person.Equipment}}</li>
+                          <li>Phone: {{Person.Phone}}</li>
+                        </ul>
+                    </div>
+                  </li>
+        
+            </ul>
+            
+        </div>
+    </div> 
