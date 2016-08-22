@@ -1,6 +1,9 @@
 angular.module('callTimeApp', ['ui.router'])
-    .config(Config);
-    modalOpen;
+    .config(Config)
+    .controller('modalOpen', [
+            '$scope',
+            modalOpenFunc
+        ]);
 
 
 //******Router Setup*******
@@ -40,6 +43,6 @@ angular.module('callTimeApp', ['ui.router'])
             $urlRouterProvider.otherwise('/Landing');
     }
 
-    function modalOpen() {
+    function modalOpenFunc($scope) {
         $('#modal1').openModal();
     }
