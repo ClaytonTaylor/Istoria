@@ -7,11 +7,11 @@ nav {
 }
 
 .section {
-    background-color: #343642;
+    background:rgba(0,0,0,0);
 }
 
 .row-container {
-    background-color: #343642;
+    background:rgba(0,0,0,0);
     width: 100%;
 }
 
@@ -24,20 +24,27 @@ nav {
 }
 
 .container {
-    margin-bottom: 76px;
+    /*margin-bottom: 76px;*/
 }
 
 .fullscreen-bg__video {
-    width: 100%;
-    height: 85%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translate(-50%, -50%);
 }
 
 .no-pad-bot {
     /*background-color: rgba(0,0,0,2);*/
     position: absolute;
-    top: 30%;
+    /*top: 30%;*/
     width: 100%;
-    height: 100%;
+    height: auto;
     padding: 0;
 }
 
@@ -50,3 +57,16 @@ form p {
     text-align: center;
     font-size: 18px;
 }
+
+/*.page-footer {
+    width: 100%;
+    position: absolute;
+}*/
+
+/*p {
+    width: 145px;
+    margin-top: 90px;
+    margin-right: 100px;
+    margin-bottom: 0px;
+    font-size: 10px;
+}*/

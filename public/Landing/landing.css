@@ -1,6 +1,6 @@
-/*body {*/
-/*    background-color: #348899;*/
-/*}*/
+body {
+    background-color: #343642;
+}
 
 .nav-wrapper {
     background-color: #343642;
@@ -21,19 +21,27 @@ nav {
 
 
 .fullscreen-bg {
-    /*position: relative;*/
+    position: relative;
+    background-size: 95%;
     /*height: 56%;*/
     /*opacity: .1;*/
     /*height: 0px;*/
 }
 
 .container {
-    margin-bottom: 76px;
+    /*margin-bottom: 76px;*/
 }
 
 .fullscreen-bg__video {
-    width: 100%;
-    height: 85%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translate(-50%, -50%);
 }
 
 .no-pad-bot {
@@ -41,7 +49,7 @@ nav {
     position: absolute;
     top: 30%;
     width: 100%;
-    height: 100%;
+    height: 200px;
     padding: 0;
 }
 
@@ -54,3 +62,9 @@ form p {
     text-align: center;
     font-size: 18px;
 }
+
+/*footer {
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+}*/
