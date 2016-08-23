@@ -14,8 +14,10 @@
       <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
-      <link href="./Landing/music.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-      <link href="./Login/login.css" type="text/css" rel="stylesheet"/>
+      <link href="./Landing/landing.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <link href="./mean-auth/public/css/auth.css" type="text/css" rel="stylesheet"/>
+      <link href="./About/about.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <!-- <link href="./Login/login.css" type="text/css" rel="stylesheet"/> -->
   
           <!-- Compiled and minified JavaScript -->
     </head>
@@ -23,13 +25,12 @@
     <body ng-app="callTimeApp">
         <!--Navbar-->
         <nav role="navigation">
-            <div class="nav-wrapper container"><a id="logo-container" href="../Landing/filmlanding.html" class="brand-logo">Istoria</a>
+            <div class="nav-wrapper container"><a id="logo-container" ui-sref="Landing" class="brand-logo">Istoria</a>
               <div>
                 <ul class="right hide-on-med-and-down">
                      <li><a ui-sref="Landing">Home</a></li>
-                     <!--the hell is this?-->
-                     <!--<li><a href="/filmsearch.html">Search</a></li>-->
-                     <!--<li><a ui-sref="about">About</a></li>-->
+                     <li><a ui-sref="Login">Login</a></li>
+                     <li><a ui-sref="About">About</a></li>
                      <!--<li><a href="contact">Contact</a></li>-->
                 </ul>
               </div>

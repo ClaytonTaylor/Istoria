@@ -14,7 +14,7 @@ angular.module('callTimeApp', ['ui.router'])
         //add .states for each html page
             .state('Login', {
                 url: '/Login',
-                templateUrl: './Login/login.html'
+                templateUrl: './mean-auth/views/auth.html'
                 // controller: 'loginController as logCtrl'
                 // authenticate: false
             })
@@ -22,16 +22,31 @@ angular.module('callTimeApp', ['ui.router'])
             .state('Landing', {
                 url: '/Landing',
                 templateUrl: './Landing/landing.html',
-                controller: function($scope){ // manually adding a function to the controller
-                    $scope.getStarted = function() {
-                        $('#signUpModal').openModal();
-                    }
-                },
+                // controller: function ($scope){ // manually adding a function to the controller
+                //                 $scope.signUp = function() {
+                //                     console.log('New User Made')
+                //                     $('#signUpModal').openModal();
+                //                 }
+                //                 $scope.submitSignIn = function() {
+                //                     console.log('User Submitted Information for Sign Up')
+                //                     $('#signUpModal').closeModal();
+                //                 }
+                //                 $scope.login = function() {
+                //                     console.log('User Is Logging In')
+                //                     $('#loginModal').openModal();
+                //                 }
+                //                 $scope.loginSubmit = function() {
+                //                     console.log('User Logged In')
+                //                     $('#loginModal').closeModal();
+                //                 }
+
+                            
+                //         }
                 // authenticate: true
             })
-            .state('MusicLanding', {
-                url: '/MusicLanding',
-                templateUrl: './Music/musiclanding.html'
+            .state('About', {
+                url: '/About',
+                templateUrl: './About/about.html'
                 // controller: '',
                 // authenticate: true
             })

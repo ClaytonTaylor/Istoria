@@ -13,20 +13,12 @@
             <div class="row center">
                 <!-- <a class="btn-large waves-effect waves-light green modal-trigger"
                         href="#signUpModal" id="download-button">Get Started</a> -->
-                <button class="btn-large waves-effect waves-light green" ng-click="getStarted()">Register</button>
-                <button class="btn-large waves-effect waves-light blue">Login</button>
-                <!-- <div class="modal" id="modal1">
-                    <div class="modal-content">
-                        <h4>Create New Account</h4>
-                        <p>A bunch of text</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a class="modal-action modal-close waves-effect waves-green btn-flat"
-                        data-target="#modal1" data-toggle="modal" href="#!">Agree</a>
-                    </div>
-                </div> -->
-                <div class="modal fade bs-example-modal-lg" id="signUpModal">
-              <!-- <div class="modal-dialog modal-lg" role="document"> -->
+                <button class="btn-large waves-effect waves-light green" style="right: 20px;">Begin</button> <!-- ng-click="signUp()" -->
+                <button class="btn-large waves-effect waves-light blue" ui-sref="Login" style="left: 20px;" >Login</button> <!-- ng-click="login()" -->
+                
+
+<!--Sign Up (Begin) Modal -->
+                <!-- <div class="modal fade bs-example-modal-lg" id="signUpModal">
                   <div class="modal-content signUpContent">
                       <form class="userInfo">
                           <h2>Create New Account</h2>
@@ -42,8 +34,8 @@
                                     <input class="infoFields form-control" type="email" name="email" placeholder="Enter e-mail" />
                               </li>
                               <li>
-                                    <input class="inforFields form-control" type="text" name="gender" placeholder="Enter Gender"/>
-                                    <select ng-model='Position' class="browser-default background white black-text" style="width: 50%; display:flex">
+                                    <input class="infoFields form-control" type="password" name="password" placeholder="Enter Password"/>
+                                    <select ng-model='Position' class="browser-default background white black-text" style="width: 100%; display:flex">
                                         <option value="" disabled selected>Crew Position</option>
                                         <option value="Art Director">Art Director</option>
                                         <option value="Best Boy Lighting">Best Boy Lighting</option>
@@ -88,15 +80,32 @@
                                         <option value="Visual Effects Producer">Visual Effects Producer</option>
                                     </select>
                                 </ul>
-                          <input type="submit" value="Submit" class="btn-large waves-effect waves-light green btn-success" data-target="signUpModal" data-toggle="modal" >
+                          <input type="submit" value="Submit" class="btn-large waves-effect waves-light green btn-success" data-target="signUpModal" data-toggle="modal" ng-click="submitSignIn()" >
                          </form>
                   </div>
-              <!-- </div> -->
+          </div>
+<! Sign Up (Begin) Modal -->
+            
+<!-- Login Modal -->
+        <div class="modal fade bs-example-modal-lg" id="loginModal">
+                  <div class="modal-content loginContent">
+                      <form class="userInfo">
+                          <h2>Login</h2>
+                          <ul>
+                              <li>
+                                    <input class="infoFields form-control" type="email" name="email" placeholder="Enter e-mail" />
+                              </li>
+                              <li>
+                                    <input class="infoFields form-control" type="password" name="password" placeholder="Enter Password"/>
+                                </ul>
+                          <input type="submit" value="Submit" class="btn-large waves-effect waves-light green btn-success" data-target="loginModal" data-toggle="modal" ng-click="loginSubmit()">
+                         </form>
+                  </div>
           </div>
 
             </div>
         </div>
-    </div><!-- Modal Structure -->
+    </div>
     <!--start of parlex-->
     <!--<div class="parallax-container" style="height: 250px; width: 100%">-->
     <!--    <div>-->
