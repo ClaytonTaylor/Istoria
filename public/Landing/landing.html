@@ -13,7 +13,8 @@
             <div class="row center">
                 <!-- <a class="btn-large waves-effect waves-light green modal-trigger"
                         href="#signUpModal" id="download-button">Get Started</a> -->
-                <button class="waves-effect waves-light btn" ng-click="getStarted()">Get Started</button>
+                <button class="btn-large waves-effect waves-light green" ng-click="getStarted()">Register</button>
+                <button class="btn-large waves-effect waves-light blue">Login</button>
                 <!-- <div class="modal" id="modal1">
                     <div class="modal-content">
                         <h4>Create New Account</h4>
@@ -29,18 +30,65 @@
                   <div class="modal-content signUpContent">
                       <form class="userInfo">
                           <h2>Create New Account</h2>
+                          <p> We believe in connecting you with people who will unlock your full potential. Fill out your information as accurately as possible.</p>
                           <ul>
                               <li>
-                                  <input class="infoFields form-control"type="email" name="email" placeholder="Enter e-mail" />
+                                    <input class="infoFields form-control" type="text" name="firstName" placeholder="Enter first name" />
                               </li>
                               <li>
-                                  <input class="infoFields form-control" type="text" name="firstName" placeholder="Enter first name" />
+                                    <input class="infoFields form-control" type="text" name="lastName" placeholder="Enter last name" />
                               </li>
                               <li>
-                                  <input class="infoFields form-control" type="text" name="lastName" placeholder="Enter last name" />
+                                    <input class="infoFields form-control" type="email" name="email" placeholder="Enter e-mail" />
                               </li>
-                          </ul>
-                          <input type="submit" value="Submit" class="btn btn-success" data-target="signUpModal" data-toggle="modal" >
+                              <li>
+                                    <input class="inforFields form-control" type="text" name="gender" placeholder="Enter Gender"/>
+                                    <select ng-model='Position' class="browser-default background white black-text" style="width: 50%; display:flex">
+                                        <option value="" disabled selected>Crew Position</option>
+                                        <option value="Art Director">Art Director</option>
+                                        <option value="Best Boy Lighting">Best Boy Lighting</option>
+                                        <option value="Boom Operator">Boom Operator</option>
+                                        <option value="Camera Operator">Camera Operator</option>
+                                        <option value="Carpenter">Carpenter</option>
+                                        <option value="Casting Director">Casting Director</option>
+                                        <option value="Cinematographer (Director of Photography)">Cinematographer (Director of Photography)</option>
+                                        <option value="Composer">Composer</option>
+                                        <option value="Construction Coordinator">Construction Coordinator</option>
+                                        <option value="Costume Designer">Costume Designer</option>
+                                        <option value="Costume Supervisor">Costume Supervisor</option>
+                                        <option value="Costumer">Costumer</option>
+                                        <option value="Director">Director</option>
+                                        <option value="Dolly Grip">Dolly Grip</option>
+                                        <option value="Film Editor">Film Editor</option>
+                                        <option value="First Assistant Camera (1st A.C.)">First Assistant Camera (1st A.C.)</option>
+                                        <option value="First Assistant Director (1st A.D.)">First Assistant Director (1st A.D.)</option>
+                                        <option value="Gaffer">Gaffer</option>
+                                        <option value="Grip">Grip</option>
+                                        <option value="Hair Stylist">Hair Stylist</option>
+                                        <option value="Head Carpenter">Head Carpenter</option>
+                                        <option value="Illustrator">Illustrator</option>
+                                        <option value="Key Grip">Key Grip</option>
+                                        <option value="Key Makeup Artis">Key Makeup Artist</option>
+                                        <option value="Lead Man">Lead Man</option>
+                                        <option value="Lighting Technician">Lighting Technician</option>
+                                        <option value="Makeup Artist">Makeup Artist</option>
+                                        <option value="Music Supervisor">Music Supervisor</option>
+                                        <option value="Production Designer">Production Designer</option>
+                                        <option value="Second Assistant Camera (2nd A.C.)">Second Assistant Camera (2nd A.C.)</option>
+                                        <option value="Second Assistant Director (2nd A.D.)">Second Assistant Director (2nd A.D.)</option>
+                                        <option value="Set Decorator">Set Decorator</option>
+                                        <option value="Set Designer">Set Designer</option>
+                                        <option value="Set Dresser">Set Dresser</option>
+                                        <option value="Sound Designer">Sound Designer</option>
+                                        <option value="Sound Editor">Sound Editor</option>
+                                        <option value="Sound Mixer">Sound Mixer</option>
+                                        <option value="Special Effects Supervisor">Special Effects Supervisor</option>
+                                        <option value="Stunt Coordinator">Stunt Coordinator</option>
+                                        <option value="Stuntman">Stuntman</option>
+                                        <option value="Visual Effects Producer">Visual Effects Producer</option>
+                                    </select>
+                                </ul>
+                          <input type="submit" value="Submit" class="btn-large waves-effect waves-light green btn-success" data-target="signUpModal" data-toggle="modal" >
                          </form>
                   </div>
               <!-- </div> -->

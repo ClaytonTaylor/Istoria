@@ -49,3 +49,8 @@ h1 {
     font-size: 75px;
     margin-bottom: 0px;
 }
+
+form p {
+    text-align: center;
+    font-size: 18px;
+}
