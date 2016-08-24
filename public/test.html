@@ -1,0 +1,69 @@
+<!-- <!DOCTYPE html>
+<html ng-app="FilmSearch">
+    <head>
+        <title>Film Search Test</title>
+        <source rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script> -->
+
+        <!-- <script src="../scripts/app.module.js"></script>
+        <script src="../scripts/app.controller.users.js"></script>
+        <script src="../scripts/app.factory.api.js"></script>
+
+    </head> -->
+    <body ng-controller="usersController as userCtrl" class="container">
+        <!--{{hCtrl.hqList}}-->
+        <a href="/auth/google"> Sign in with google, yo</a>
+        <h1>User Form</h1>
+        <form ng-submit="usersCtrl.makeAUser()">
+            <input class="form-control" ng-model="userCtrl.newUser.firstName" placeholder="First Name">
+
+            <input ng-repeat="lastName in userCtrl.newUser.lastName track by $index" class="form-control" ng-model="userCtrl.newUser.lastName[$index]"
+            placeholder="Last Name">
+
+            <input ng-repeat="email in userCtrl.newUser.email track by $index" class="form-control" ng-model="userCtrl.newUser.email[$index]"
+            placeholder="Email">
+
+            <!-- <input class="form-control" type="checkbox" ng-model="hCtrl.newHero.masked"> -->
+
+            <input class="form-control" ng-model="userCtrl.newUser.location"
+            placeholder="Location (City)">
+
+            <select 
+            ng-model="userCtrl.newUser.equipment" class="form-control" 
+            ng-options="equip._id as equip.name for equip in userCtrl.equipList"
+            >
+            <!--VALUE as DISPLAY for OBJ in LIST-->
+                <option value="" selected disabled>Choose Equipment</option>
+
+            </select>
+
+            <input type="submit">
+
+            <!-- <div ng-click="hCtrl.pwExtra('powers')" class="btn btn-info"> Add Power </div>
+            <div ng-click="hCtrl.pwExtra('weaknesses')" class="btn btn-info"> Add Weakness </div> -->
+        </form>
+    
+        <h1>Equipment Form</h1>
+
+        <form ng-submit="userCtrl.makeAnEquip()">
+            <input class="form-control" ng-model="hCtrl.newHQ.name", placeholder="Name">
+            <input class="form-control" type="checkbox" ng-model="hCtrl.newHQ.butler", placeholder="Butler">
+            <input class="form-control" ng-model="hCtrl.newHQ.moatType", placeholder="Moat Type">
+             <input class="form-control" ng-repeat="amenity in hCtrl.newHQ.amenities track by $index" ng-model="hCtrl.newHQ.amenities[$index]", placeholder="Amenity">
+             
+             <input type="submit">
+             <div ng-click="hCtrl.addAmenity()" class="btn btn-primary"> Add Amenity </div>
+        </form>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>User List : </h1>
+        </div>
+        <div ng-repeat="user in userCtrl.userList" class="col-xs-12">
+            {{User.firstName}}
+        </div>
+    </div>
+
+    </body>
+<!-- </html> -->

@@ -47,7 +47,7 @@ nav {
 .no-pad-bot {
     /*background-color: rgba(0,0,0,2);*/
     position: absolute;
-    top: 30%;
+    top: 25%;
     width: 100%;
     height: 200px;
     padding: 0;
@@ -61,6 +61,10 @@ h1 {
 form p {
     text-align: center;
     font-size: 18px;
+}
+
+h2 {
+    text-align: center;
 }
 
 /*footer {

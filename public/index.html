@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="filmSearchApp">  <!-- ng-app="FilmSearch" -->
     
     <head>
       <title>Istoria</title>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+    <!-- Angular -->
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+
+    <!-- BackEnd JS -->
+
+      <script src="/scripts/app.module.js"></script>
+      <script src="/scripts/app.controller.users.js"></script>
+      <script src="/scripts/app.factory.api.js"></script>
       
-   <!--CSS  -->
+    <!--CSS  -->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+    <!-- JQuery -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js">
       </script> 
       <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
@@ -18,19 +30,20 @@
       <link href="./mean-auth/public/css/auth.css" type="text/css" rel="stylesheet"/>
       <link href="./About/about.css" type="text/css" rel="stylesheet" media="screen,projection"/>
       <!-- <link href="./Login/login.css" type="text/css" rel="stylesheet"/> -->
-  
-          <!-- Compiled and minified JavaScript -->
+      
+
     </head>
     
-    <body ng-app="callTimeApp">
+    <body>
         <!--Navbar-->
         <nav role="navigation">
             <div class="nav-wrapper container"><a id="logo-container" ui-sref="Landing" class="brand-logo">Istoria</a>
               <div>
                 <ul class="right hide-on-med-and-down">
                      <li><a ui-sref="Landing">Home</a></li>
-                     <li><a ui-sref="Login">Login</a></li>
+                     <!-- <li><a ui-sref="Login">Login</a></li> -->
                      <li><a ui-sref="About">About</a></li>
+                     <li><a ui-sref="Test">Test</a></li>
                      <!--<li><a href="contact">Contact</a></li>-->
                 </ul>
               </div>
@@ -48,12 +61,13 @@
 
 
     <!--Angular-->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
     <!--JS files-->
     <script src="main.js"></script>
     <script src="./Search/db.js"></script>
     <script src="./Search/search.js"></script>
+    <script src="/About/about.js"></script>
     
     </body>
 </html>

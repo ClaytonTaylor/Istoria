@@ -1,4 +1,4 @@
-angular.module('callTimeApp')
+angular.module('filmSearchApp')
     .controller('searchController', searchController);
     
     function searchController($scope) {
