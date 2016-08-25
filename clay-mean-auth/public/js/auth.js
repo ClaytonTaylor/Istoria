@@ -18,7 +18,7 @@
                 $http.post('/login', auth.payload).then(auth.login.success, auth.login.error)
             },
             success: function(res) {
-                location.href = '/dashboard'
+                location.hash='#/Control-Panel'
             },
             error: function(err) {
                 console.error('Login.error', err)
@@ -31,7 +31,7 @@
                 $http.post('/register', auth.payload).then(auth.register.success, auth.register.error)
             },
             success: function(res) {
-                location.href = '/dashboard'
+                location.href = '#/Control-Panel'
             },
             error: function(err) {
                 console.error('Register:error', err)

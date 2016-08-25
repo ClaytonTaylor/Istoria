@@ -32,9 +32,10 @@
 
 
 <!--Sign Up (Begin) Modal -->
+        <div ng-controller="app.auth.controller as auth">
                 <div class="modal fade bs-example-modal-lg" id="signUpModal">
                   <div class="modal-content signUpContent">
-                      <form class="userInfo">
+                      <form class="userInfo" ng-submit="auth.login.submit($event)">
                           <h2>Create New Account</h2>
                           <p> We believe in connecting you with people who will unlock your full potential. Fill out your information as accurately as possible.</p>
                           <ul>
@@ -45,11 +46,11 @@
                                     <input class="infoFields form-control" type="text" name="lastName" placeholder="Enter last name" />
                               </li>
                               <li>
-                                    <input class="infoFields form-control" type="email" name="email" placeholder="Enter e-mail" />
+                                    <input class="infoFields form-control" type="email" name="email" placeholder="Enter e-mail" ng-model="auth.payload.email"/>
                               </li>
                               <li>
                                     <input class="infoFields form-control" type="password" name="password" placeholder="Enter Password"/>
-                                    <select ng-model='Position' class="browser-default background white black-text" style="width: 100%; display:flex">
+                                    <select ng-model='auth.paylod.password' class="browser-default background white black-text" style="width: 100%; display:flex">
                                         <option value="" disabled selected>Crew Position</option>
                                         <option value="Art Director">Art Director</option>
                                         <option value="Best Boy Lighting">Best Boy Lighting</option>
@@ -101,18 +102,29 @@
 <!-- <! Sign Up (Begin) Modal -->
             
 <!-- Login Modal -->
+    <div ng-controller="app.auth.controller as auth">
         <div class="modal fade bs-example-modal-lg" id="loginModal">
                   <div class="modal-content loginContent">
-                      <form class="userInfo">
+                      <form class="userInfo" ng-submit="auth.login.submit($event)">
                           <h2>Login</h2>
                           <ul>
-                              <li>
-                                    <input class="infoFields form-control" type="email" name="email" placeholder="Enter e-mail" />
-                              </li>
-                              <li>
-                                    <input class="infoFields form-control" type="password" name="password" placeholder="Enter Password"/>
-                                </ul>
-                          <input type="submit" value="Submit" class="btn-large waves-effect waves-light green btn-success" data-target="loginModal" data-toggle="modal" ng-click="loginSubmit()">
+                            <li>
+
+                            <!-- Email -->
+                                <input required class="infoFields form-control" type="email" name="email" placeholder="Enter e-mail" ng-model="auth.payload.email"/>
+                            </li>
+                            <li>
+
+                            <!-- Password -->
+                                <input required class="infoFields form-control" type="password" name="password" placeholder="Enter Password" ng-model="auth.payload.password"/>
+                            </li>
+                            <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
+                          </ul>
+
+                            <!-- Login Button -->
+                          <button type="submit" class="btn-large waves-effect waves-light green btn-success" data-target="loginModal" data-toggle="modal" ng-click="loginSubmit()">Login</button>
+                          <!-- ng-click="loginSubmit()" -->
+                          <!-- <p ng-class="auth.login.alert">{{ auth.login.message }}</p> -->
                          </form>
                   </div>
           </div>
@@ -121,6 +133,7 @@
 
             </div>
         </div>
+    </div>
     </div>
     <!--start of parlex-->
     <!--<div class="parallax-container" style="height: 250px; width: 100%">-->
