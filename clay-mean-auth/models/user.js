@@ -5,9 +5,13 @@ const SALT = 10
 var mongoose = require('mongoose'),
     bcrypt = require('bcryptjs'),
     UserSchema = new mongoose.Schema({
-        name     : String,
+        firstName     : String,
+        lastName      : String,
         email    : { type: String, unique: true },
         password : String,
+        city     : String,
+        state    : String,
+        crew     : String,
         created  : Number // Date.now()
     });
 

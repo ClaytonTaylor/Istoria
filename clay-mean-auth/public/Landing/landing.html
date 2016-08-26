@@ -35,22 +35,35 @@
         <div ng-controller="app.auth.controller as auth">
                 <div class="modal fade bs-example-modal-lg" id="signUpModal">
                   <div class="modal-content signUpContent">
-                      <form class="userInfo" ng-submit="auth.login.submit($event)">
+                      <form class="userInfo" ng-submit="auth.register.submit($event)">
                           <h2>Create New Account</h2>
-                          <p> We believe in connecting you with people who will unlock your full potential. Fill out your information as accurately as possible.</p>
+                          <!-- <p> We believe in connecting you with people who will unlock your full potential. Fill out your information as accurately as possible.</p> -->
                           <ul>
-                              <li>
-                                    <input class="infoFields form-control" type="text" name="firstName" placeholder="Enter first name" />
-                              </li>
-                              <li>
-                                    <input class="infoFields form-control" type="text" name="lastName" placeholder="Enter last name" />
-                              </li>
-                              <li>
-                                    <input class="infoFields form-control" type="email" name="email" placeholder="Enter e-mail" ng-model="auth.payload.email"/>
-                              </li>
-                              <li>
-                                    <input class="infoFields form-control" type="password" name="password" placeholder="Enter Password"/>
-                                    <select ng-model='auth.paylod.password' class="browser-default background white black-text" style="width: 100%; display:flex">
+                        <!-- First Name -->
+                                <li>
+                                    <input required class="infoFields form-control" type="text" name="firstName" placeholder="Enter First Name" ng-model='auth.payload.firstName' />
+                                </li>
+                        <!-- Last Name -->
+                                <li>
+                                    <input required class="infoFields form-control" type="text" name="lastName" placeholder="Enter Last Name" ng-model='auth.payload.lastName' />
+                                </li>
+                        <!-- Email -->
+                                <li>
+                                    <input required class="infoFields form-control" type="email" name="email" placeholder="Enter E-mail" ng-model="auth.payload.email"/>
+                                </li>
+                        <!-- Password -->
+                                <li>
+                                    <input required class="infoFields form-control" type="password" name="password" placeholder="Enter Password" ng-model='auth.payload.password'/>
+                                </li>
+                        <!-- City -->
+                                <li>
+                                    <input required class="infoFields form-control" type="text" name="city" placeholder="Enter City" ng-model="auth.payload.city"/>
+                                </li>
+                                <li>
+                                    <input required class="infoFields form-control" type="text" name="city" placeholder="Enter State" ng-model="auth.payload.state"/>
+                                </li>
+                        <!-- Crew Select -->
+                                    <select required class="browser-default background white black-text" style="width: 100%; display:flex" ng-model='auth.payload.crew'>
                                         <option value="" disabled selected>Crew Position</option>
                                         <option value="Art Director">Art Director</option>
                                         <option value="Best Boy Lighting">Best Boy Lighting</option>
@@ -95,7 +108,9 @@
                                         <option value="Visual Effects Producer">Visual Effects Producer</option>
                                     </select>
                                 </ul>
-                          <input type="submit" value="Submit" class="btn-large waves-effect waves-light green btn-success" data-target="signUpModal" data-toggle="modal" ng-click="submitSignIn()">
+                          <!-- <input required class="infoFields form-control" data-target="signUpModal" data-toggle="modal"> -->
+
+                          <button type="submit" class="btn-large waves-effect waves-light green btn-success" data-target="signInModal" data-toggle="modal" ng-click="submitSignIn()">Login</button>
                          </form>
                   </div>
           </div>
@@ -123,8 +138,7 @@
 
                             <!-- Login Button -->
                           <button type="submit" class="btn-large waves-effect waves-light green btn-success" data-target="loginModal" data-toggle="modal" ng-click="loginSubmit()">Login</button>
-                          <!-- ng-click="loginSubmit()" -->
-                          <!-- <p ng-class="auth.login.alert">{{ auth.login.message }}</p> -->
+                          <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
                          </form>
                   </div>
           </div>

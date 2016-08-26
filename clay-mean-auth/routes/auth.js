@@ -60,7 +60,7 @@ module.exports = {
     },
     register: (req, res) => {
         var newUser = new User(req.body)
-
+        // console.log(newUser, req.body)
         newUser.save((err, user) => {
             if( err ) {
                 console.error('#ERROR#'.bold.red, err.message);
@@ -73,6 +73,7 @@ module.exports = {
                 }
             } else {
                 req.session.user = user
+                console.info('auth.login.user', user);
                 res.send(user)
             }
         });
