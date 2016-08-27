@@ -3,7 +3,7 @@
         <!--<source src="../Media/BlackSandsVik30R.webmhd.webm">-->
          <source src="../Media/aboutpagebackground.webmhd.webm"></video>
     </div>
-    <div class="no-pad-bot" id="index-banner">
+    <div class="no-pad-bot" id="index-banner-about">
         <div class="container">
             <h1 class="header center white-text">What We Do</h1>
             <!-- <div class="row center">
@@ -38,46 +38,47 @@
                             Story-Tellers around you, we provide you with the
                             opportunity to combine talents and ideas to create
                             the Untold Stories you have dreamt of. We compile
-                            the team and give you the keys to create without
-                            the hassle of a Studio or a Producer.</p>
+                            the team and give you the keys to create without wasting time and resources.</p>
                         </div>
                     </div>
                     <div class="col s12 m4">
                         <div class="icon-block">
                             <h2 class="center white-text"><i class="medium material-icons">group</i></h2>
                             <h5 class="center white-text">Result</h5>
-                            <p class="light white-text">Everyone has the
-                            opportunity to create the way they want to. Whether
-                            you are a Director, Writer, Boom Operator, or you
-                            simply want to Design Costumes, you now have the
-                            ability to do so. So, the Ultimate Result is
-                            unleashing the plethora of Untold Stories upon the
-                            World. And in turn, making the world a better place
-                            for everyone.</p>
+                            <p class="light white-text">Everyone has a voice. The Stories and Ideas that go to waste can now become reality. Now, passions and talents can be used to their fullest potential. Now, the Untold can be shared with the World. Let's work together, because together, we can tell your Story.</p>
                         </div>
                     </div>
-                    <button id="aboutButton" class="btn-large waves-effect waves-light green" ng-click="signUp()">Begin</button>
-                </div>
+                    
+            </div>
+        </div>
+        <button id="aboutButton" class="btn-large waves-effect waves-light green" ng-click="signUp()">Let's Get Started</button>
+    </div>
                 
 <!-- Sign Up Modal -->
-
+        <div ng-controller="app.auth.controller as auth">
             <div class="modal fade bs-example-modal-lg" id="signUpModal">
                   <div class="modal-content signUpContent">
-                      <form class="userInfo">
+                      <form class="userInfo" ng-submit="auth.register.submit($event)">
                           <h2>Create New Account</h2>
-                          <p> We believe in connecting you with people who will unlock your full potential. Fill out your information as accurately as possible.</p>
-                          <ul>
-                              <li>
-                                    <input class="infoFields form-control" type="text" name="firstName" placeholder="Enter first name" />
-                              </li>
-                              <li>
-                                    <input class="infoFields form-control" type="text" name="lastName" placeholder="Enter last name" />
-                              </li>
-                              <li>
-                                    <input class="infoFields form-control" type="email" name="email" placeholder="Enter e-mail" />
-                              </li>
-                              <li>
-                                    <input class="infoFields form-control" type="password" name="password" placeholder="Enter Password"/>
+                            <ul>
+                                <li>
+                                    <input class="infoFields form-control" type="text" name="firstName" placeholder="Enter First Name" ng-model='auth.payload.firstName' />
+                                </li>
+                                <li>
+                                    <input class="infoFields form-control" type="text" name="lastName" placeholder="Enter Last Name" ng-model='auth.payload.lastName' />
+                                </li>
+                                <li>
+                                    <input class="infoFields form-control" type="email" name="email" placeholder="Enter E-mail" ng-model="auth.payload.email" />
+                                </li>
+                                <li>
+                                    <input class="infoFields form-control" type="password" name="password" placeholder="Enter Password" ng-model='auth.payload.password'/>
+
+                                <li>
+                                    <input required class="infoFields form-control" type="text" name="city" placeholder="Enter City" ng-model="auth.payload.city"/>
+                                </li>
+                                <li>
+                                    <input required class="infoFields form-control" type="text" name="city" placeholder="Enter State" ng-model="auth.payload.state"/>
+                                </li>
                                     <select ng-model='Position' class="browser-default background white black-text" style="width: 100%; display:flex">
                                         <option value="" disabled selected>Crew Position</option>
                                         <option value="Art Director">Art Director</option>
