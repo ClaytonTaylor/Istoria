@@ -1,6 +1,7 @@
 'use strict'
 
 var Auth = require('./auth');
+var userCtrl = require('./users');
 
 module.exports = function(app) {
     // SITE ROOT
@@ -10,10 +11,14 @@ module.exports = function(app) {
     app.get('/login', Auth.render); // route for the login page
     app.get('/logout', Auth.logout); // route for logging out
 
-    app.post('/login', Auth.login); // form request emdpoint for loggin in
+    // Users Routes
+    app.get('/users', userCtrl.get);
+    app.post('/users', userCtrl.upsert);
+
+    app.post('/login', Auth.login); // form request endpoint for loggin in
     app.post('/register', Auth.register); // form request endpoint for user registration
 
-    // DAHSBOARD
+    // DASHBOARD
     app.all('/dashboard*', Auth.session); // protect all dashboard routes from unauthorized users
     app.get('/dashboard', (req, res) => { // renders the dashboard
         res.render('dashboard.html', req.session)

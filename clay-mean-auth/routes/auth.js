@@ -21,7 +21,7 @@ var User = require('../models/user'),
 
 module.exports = {
     render: (req, res) => {
-        res.render('auth.html', req.session); // render the authenticaiton page (register/login)
+        res.render('auth.html', req.session); // render the authenticati/on page (register/login)
     },
     logout: (req, res) => {
         req.session.user = null; // clears the users cookie session

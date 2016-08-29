@@ -5,6 +5,7 @@ var express = require('express'), // our framework!
     path = require('path'), // used to resolve paths across OSes
     logger = require('morgan'), // log the routes being accessed by the frontend
     ejs = require('ejs'), // used for server-side templating
+    routes = require('routes')
     mongoose = require('mongoose'),
     sessions = require('client-sessions')({ // session cookie
         cookieName : "_myAppName", // cookie name (within document.cookies on the Frontend)
@@ -44,6 +45,7 @@ app.engine('html', ejs.renderFile)
 
 // mount the body-parsing middleware to parse payload strings into `body` object stored in `req.body`
 app.post('*', bodyParser.json(), bodyParser.urlencoded({ extended:true }))
+
 
 require('./routes')(app) // do all the routing stuff in a separate file by passing a reference of the app!
 
