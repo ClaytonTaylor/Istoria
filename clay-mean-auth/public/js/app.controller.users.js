@@ -9,7 +9,7 @@ function userCtrl (apiFactory){
 	uCtrl.retrieveUsers = function(){
 		apiFactory
 			.getUsers()
-			.then(function (respose){
+			.then(function (response){
 				uCtrl.userList = response.data;
 			});
 	}

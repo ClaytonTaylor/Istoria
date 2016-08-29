@@ -4,9 +4,20 @@
          <source src="../Media/dashboardbackground.webmhd.webm"></video>
     </div>
 
-   <button id="controlPanelButton" class="btn-large waves-effect waves-light green">Let's Get Started</button>
 
-   <div class="col s6">
+<div ng-controller= "usersController as userCtrl">
+   <button id="controlPanelButton" class="btn-large waves-effect waves-light green" ng-click="uCtrl.retrieveUsers()">Access DB</button>
+
+   <div ng-repeat="user in userCtrl.userList">
+   		{{user.firstName}}
+	
+	
+</div>
+</div>
+
+
+
+   <!-- <div class="col s6">
             <ul class="collapsible" data-collapsible="expandable">
                   <li ng-repeat="User in searchCtrl.NewCrew">
                    <div class="collapsible-header"><i class="material-icons">assignment_ind</i>{{Person.Position}}</div>
@@ -14,14 +25,14 @@
                         <ul style="padding: 2%">
                           <li>Name: {{User.firstName}} {{User.lastName}}</li>
                           <li>Email: {{User.email}}</li>
-                          <li>City: {{User.city}}</li>
-                          <!-- <li>Experience: {{Person.Experience}}</li>
+                          <li>City: {{user.city}}</li>
+                          <li>Experience: {{Person.Experience}}</li>
                           <li>Equipment: {{Person.Equipment}}</li>
-                          <li>Phone: {{Person.Phone}}</li> -->
-                        </ul>
+                          <li>Phone: {{Person.Phone}}</li>
+                         </ul>
                     </div>
                   </li>
         
             </ul>
             
-        </div>
+        </div> -->

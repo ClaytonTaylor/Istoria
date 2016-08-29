@@ -1,15 +1,15 @@
 // Users Controller
 
+
+//Requiring the model so we can run methods on it
 var User = require('../models/user');
 
 module.exports = {
 	get : (req, res) => {
-
-		User.find({})
-			.populate('city')
-			.exec(function(err, users){
+		User.find({}, function(err, users){
+				console.error(err, users);
 				res.json(users);
-			});
+			})
 	},
 
 	upsert : (req, res) => {

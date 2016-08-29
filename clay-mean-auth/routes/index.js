@@ -12,8 +12,8 @@ module.exports = function(app) {
     app.get('/logout', Auth.logout); // route for logging out
 
     // Users Routes
-    app.get('/users', userCtrl.get);
-    app.post('/users', userCtrl.upsert);
+    app.get('/api/users', userCtrl.get);
+    app.post('/api/users', userCtrl.upsert);
 
     app.post('/login', Auth.login); // form request endpoint for loggin in
     app.post('/register', Auth.register); // form request endpoint for user registration
