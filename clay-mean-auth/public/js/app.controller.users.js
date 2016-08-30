@@ -12,7 +12,22 @@ function userCtrl (apiFactory){
 			.getUsers()
 			.then(function (response){
 				uCtrl.userList = response.data;
-			});
+			})
+			// 	unique = response.data;
+
+			// 	var data = [
+			// 		{ firstName: 'Kyle', crew: 'Casting Director'},
+			// 		{ firstName: 'Daulton', crew: 'Casting Director'},
+			// 		{ firstName: 'Nick', crew: 'First Assistant Director (1st A.D.)'}
+			// 		];
+			
+			// 		var unique = data.reduce((res, user) => {
+			// 			if (!res.hasOwnProperty(user.crew)) res[user.crew] = user;
+			// 			return res;
+			// 		}, {});
+			
+			// 		console.log(unique);			
+			// });
 			
 	}
 	
@@ -29,17 +44,10 @@ function userCtrl (apiFactory){
 	uCtrl.open = function() {
 		$('.collapsible').collapsible();
 		uCtrl.retrieveUsers();
-		single: function(req, res){
-            User.findOne({_id: req.params.id},
-            function(err, user){
-                if(err) {
-                    res.json(err)
-                } else {
-                    res.json(user)
-                }
-            })
-        },
+
 	};
+
+
 }
 
 // function searchCtrl (apiFactory){
