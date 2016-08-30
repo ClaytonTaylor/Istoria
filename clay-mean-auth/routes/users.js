@@ -6,7 +6,7 @@ var User = require('../models/user');
 
 module.exports = {
 	get : (req, res) => {
-		User.findOne({city: 'Oklahoma City'},
+		User.find({city: 'Oklahoma City'},
 
 			function(err, users){
 				console.error(err, users);
