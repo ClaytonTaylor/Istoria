@@ -9,14 +9,14 @@
 
 <div class="list" class="hidden">
             <ul class="collapsible" data-collapsible="expandable">
-				<li>
+				<li ng-repeat="user in userCtrl.userList">
                    <div class="collapsible-header"><i class="material-icons">assignment_ind</i>{{user.crew}}</div>
                     <div class="collapsible-body white">
                         <ul style="padding: 2%">
-                          <li>Name: {{userCtrl.userList.firstName}} {{userCtrl.userList.lastName}}</li>
-                          <li>Email: {{userCtrl.userList.email}}</li>
-                          <li>City: {{userCtrl.userList.city}}</li>
-                          <li>State: {{userCtrl.userList.state}}</li>
+                          <li>Name: {{user.firstName}} {{user.lastName}}</li>
+                          <li>Email: {{user.email}}</li>
+                          <li>City: {{user.city}}</li>
+                          <li>State: {{user.state}}</li>
                         </ul>
                     </div>
                 </li>
