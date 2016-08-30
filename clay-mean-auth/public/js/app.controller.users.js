@@ -10,24 +10,26 @@ function userCtrl (apiFactory){
 	uCtrl.retrieveUsers = function(){
 		apiFactory
 			.getUsers()
-			.then(function (response){
-				uCtrl.userList = response.data;
-			})
-			// 	unique = response.data;
+			.then(function (result){
+				console.log(result.data);
+				uCtrl.userList = result.data;
 
-				var data = [
-					{ firstName: 'Kyle', crew: 'Casting Director'},
-					{ firstName: 'Daulton', crew: 'Casting Director'},
-					{ firstName: 'Nick', crew: 'First Assistant Director (1st A.D.)'}
-					];
+			})
+		}
+
+			// 	var data = [
+			// 		{ firstName: 'Kyle', crew: 'Casting Director'},
+			// 		{ firstName: 'Daulton', crew: 'Casting Director'},
+			// 		{ firstName: 'Nick', crew: 'First Assistant Director (1st A.D.)'}
+			// 		];
 			
-					var unique = users.reduce((res, user) => {
-						if (!res.hasOwnProperty(user.crew)) res[user.crew] = user;
-						return res;
-					}, {});
+			// 		var unique = .reduce((res, user) => {
+			// 			if (!res.hasOwnProperty(user.crew)) res[user.crew] = user;
+			// 			return res;
+			// 		}, {});
 			
-					console.log(unique);			
-			};
+			// 		console.log(unique);			
+			// };
 	
 
 	uCtrl.makeAUser = function () {
@@ -43,10 +45,10 @@ function userCtrl (apiFactory){
 		$('.collapsible').collapsible();
 		uCtrl.retrieveUsers();
 
-	};
+	}
 
+};
 
-}
 
 // function searchCtrl (apiFactory){
 
