@@ -19,7 +19,7 @@ module.exports = function(app) {
     app.post('/register', Auth.register); // form request endpoint for user registration
 
     // DASHBOARD
-    app.all('/dashboard*', Auth.session); // protect all dashboard routes from unauthorized users
+    app.all('/dashboard', Auth.session); // protect all dashboard routes from unauthorized users
     app.get('/dashboard', (req, res) => { // renders the dashboard
         res.render('dashboard.html', req.session)
     });
